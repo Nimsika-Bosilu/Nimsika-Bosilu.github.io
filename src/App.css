@@ -1,0 +1,15 @@
+main {
+  padding-block: 20px;
+}
+
+.app-layout {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 1250px) {
+  .app-layout {
+    grid-template-columns: 340px 1fr;
+    align-items: start;
+  }
+}

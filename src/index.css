@@ -1,0 +1,284 @@
+/* -------------------------------------------------- */
+/* CUSTOM PROPERTIES / PALETTE                         */
+/* -------------------------------------------------- */
+:root {
+  /* base palette (as supplied) */
+  --navy: rgb(10, 41, 71);
+  --cream: rgb(243, 228, 201);
+  --sage: rgb(211, 212, 192);
+  --brown: rgb(139, 94, 60);
+
+  /* surfaces (derived from the base palette via alpha only) */
+  --bg-body: var(--navy);
+  --bg-surface: rgba(243, 228, 201, 0.06);
+  --bg-surface-2: rgba(243, 228, 201, 0.1);
+  --bg-surface-hover: rgba(243, 228, 201, 0.14);
+  --border-color: rgba(211, 212, 192, 0.18);
+  --border-color-strong: rgba(211, 212, 192, 0.32);
+
+  /* text */
+  --text-primary: var(--cream);
+  --text-secondary: var(--sage);
+  --text-muted: rgba(211, 212, 192, 0.65);
+
+  /* accent */
+  --accent: var(--brown);
+  --accent-light: rgb(173, 124, 84);
+
+  /* type scale */
+  --ff-base: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fs-1: 2.4rem;
+  --fs-2: 1.9rem;
+  --fs-3: 1.5rem;
+  --fs-4: 1.1rem;
+  --fs-5: 1rem;
+  --fs-6: 0.9rem;
+  --fs-7: 0.8rem;
+  --fs-8: 0.7rem;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --radius-28: 28px;
+  --radius-16: 16px;
+  --radius-12: 12px;
+  --radius-10: 10px;
+  --radius-8: 8px;
+  --radius-6: 6px;
+  --radius-4: 4px;
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.4s ease;
+  --cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* -------------------------------------------------- */
+/* RESET                                               */
+/* -------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+ion-icon,
+svg {
+  display: block;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font: inherit;
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+html {
+  font-family: var(--ff-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-body);
+  color: var(--text-primary);
+  font-size: var(--fs-5);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--cream);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+/* -------------------------------------------------- */
+/* SHARED                                              */
+/* -------------------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+.h1 {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-500);
+}
+
+.h2,
+.h3 {
+  font-weight: var(--fw-500);
+}
+
+.h2 {
+  font-size: var(--fs-2);
+}
+
+.h3 {
+  font-size: var(--fs-4);
+}
+
+.section-title-wrapper {
+  margin-bottom: 30px;
+}
+
+.section-subtitle {
+  color: var(--accent-light);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.section-text {
+  color: var(--text-secondary);
+  font-size: var(--fs-6);
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--cream);
+  border-radius: var(--radius-8);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-color-strong);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--bg-surface-2);
+  border-color: var(--accent);
+}
+
+::placeholder {
+  color: var(--text-muted);
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-surface-2);
+  color: var(--accent-light);
+  border-radius: var(--radius-8);
+  font-size: 22px;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+@media (min-width: 580px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    padding-inline: 40px;
+  }
+}
+
+/* -------------------------------------------------- */
+/* PAGE ARTICLE (shared across About/Resume/Portfolio/Certificates/Contact) */
+/* -------------------------------------------------- */
+.main-content article {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-16);
+  padding: 25px;
+  animation: fade-in 0.4s ease forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.article-title {
+  color: var(--text-primary);
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 25px;
+}
+
+.h4 {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+}

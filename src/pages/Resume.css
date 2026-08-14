@@ -1,0 +1,137 @@
+.timeline {
+  margin-bottom: 40px;
+}
+
+.timeline .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.timeline .icon-box {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  background: var(--bg-surface-2);
+  color: var(--accent-light);
+  border-radius: var(--radius-10);
+  font-size: 22px;
+}
+
+.timeline .title-wrapper h3 {
+  color: var(--text-primary);
+}
+
+.timeline-list {
+  border-left: 2px solid var(--border-color);
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -31px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg-surface-2);
+}
+
+.timeline-item-title {
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.timeline-item .timeline-place {
+  color: var(--accent-light);
+  font-size: var(--fs-7);
+  display: block;
+}
+
+.timeline-item > span {
+  color: var(--text-muted);
+  font-size: var(--fs-8);
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.timeline-text {
+  color: var(--text-secondary);
+  font-size: var(--fs-7);
+  margin-top: 8px;
+  line-height: 1.7;
+}
+
+.skills-title {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.skills-item .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skills-item h5 {
+  color: var(--text-primary);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+}
+
+.skills-item data {
+  color: var(--accent-light);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-600);
+}
+
+.skill-progress-bg {
+  background: var(--bg-surface-2);
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  background: var(--accent);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s var(--cubic-out);
+}
+
+.other-skills {
+  margin-top: 40px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-item {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: var(--fs-7);
+  padding: 8px 16px;
+  border-radius: var(--radius-6);
+}
