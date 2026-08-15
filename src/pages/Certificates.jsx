@@ -1,10 +1,23 @@
-import { IoTrophyOutline, IoRibbonOutline, IoDocumentTextOutline } from "react-icons/io5";
+import { useState } from "react";
+import { IoTrophyOutline, IoRibbonOutline, IoDocumentTextOutline, IoClose } from "react-icons/io5";
 import { achievements, certificates } from "../data/profileData";
 import "./Certificates.css";
 
 const PLACEHOLDER_COUNT = 3;
 
+// Eagerly resolve every certificate image so entries in profileData.js can
+// reference them by filename alone.
+const certImages = import.meta.glob("../assets/images/certificates/*.png", {
+  eager: true,
+  import: "default",
+});
+
+const resolveImage = (filename) =>
+  certImages[`../assets/images/certificates/${filename}`];
+
 const Certificates = () => {
+  const [selected, setSelected] = useState(null);
+
   return (
     <article className="certificates active">
       <header>
@@ -60,20 +73,58 @@ const Certificates = () => {
         ) : (
           <ul className="certificate-grid">
             {certificates.map((cert) => (
-              <li key={cert.title} className="certificate-card">
-                <figure className="certificate-thumb">
-                  <img src={cert.image} alt={cert.title} />
-                </figure>
-                <div className="certificate-info">
-                  <h4 className="h4">{cert.title}</h4>
-                  <p>{cert.issuer}</p>
-                  <span>{cert.date}</span>
-                </div>
+              <li key={cert.title}>
+                <button
+                  className="certificate-card"
+                  onClick={() => setSelected(cert)}
+                >
+                  <figure className="certificate-thumb">
+                    <img
+                      src={resolveImage(cert.image)}
+                      alt={cert.title}
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div className="certificate-info">
+                    <h4 className="h4">{cert.title}</h4>
+                    <p>{cert.issuer}</p>
+                    <span>{cert.date}</span>
+                  </div>
+                </button>
               </li>
             ))}
           </ul>
         )}
       </section>
+
+      {selected && (
+        <div className="modal-overlay" onClick={() => setSelected(null)}>
+          <div
+            className="modal-box certificate-modal-box"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="modal-close"
+              onClick={() => setSelected(null)}
+              aria-label="Close"
+            >
+              <IoClose />
+            </button>
+
+            <img
+              src={resolveImage(selected.image)}
+              alt={selected.title}
+              className="certificate-modal-img"
+            />
+
+            <div className="modal-content">
+              <h3 className="modal-title">{selected.title}</h3>
+              <p className="modal-subtitle">{selected.issuer}</p>
+              <p className="modal-type">{selected.date}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </article>
   );
 };

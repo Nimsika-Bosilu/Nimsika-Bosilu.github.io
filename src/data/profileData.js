@@ -285,9 +285,94 @@ export const achievements = [
   { title: "Second Place", place: "Green Innovation Competition", year: "2017" },
 ];
 
-// Add certificate entries here once available, e.g.:
-// { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", date: "2026", image: "cert1.jpg" }
-export const certificates = [];
+// `image` refers to a filename in src/assets/images/certificates/,
+// resolved dynamically in Certificates.jsx via import.meta.glob.
+export const certificates = [
+  {
+    title: "RoboRoarZ Sri Lanka 2026 — Champion",
+    issuer: "IEEE Student Branch & Centre for Advanced Robotics, University of Moratuwa",
+    date: "2026",
+    image: "roboroarz-2026-champion.png",
+  },
+  {
+    title: "Sri Lankan Robotics Challenge (SLRC) 2026 — Finalist",
+    issuer: "Electronic Club, University of Moratuwa",
+    date: "Mar 2026",
+    image: "slrc-2026-finalist.png",
+  },
+  {
+    title: "Spark Challenge 2025/26 — Semi-Finalist",
+    issuer: "SPARK Branch, Electronic Club, University of Moratuwa",
+    date: "2026",
+    image: "spark-challenge-2026-semifinalist.png",
+  },
+  {
+    title: "Remedial Teaching Skills in Mathematics — Workshop",
+    issuer: "Southern Province Dept. of Education & Sasnaka Sansada Foundation",
+    date: "Jun 2023",
+    image: "remedial-teaching-workshop-2023.png",
+  },
+  {
+    title: "Korea International Youth Olympiad 4I — Silver Prize",
+    issuer: "World Women Inventors & Entrepreneurs Association, Seoul",
+    date: "Oct 2019",
+    image: "korea-youth-olympiad-2019-silver.png",
+  },
+  {
+    title: "18th APICTA Awards — Certificate of Senior Participation",
+    issuer: "Asia Pacific ICT Alliance, Guangzhou",
+    date: "Oct 2018",
+    image: "apicta-2018-participation.png",
+  },
+  {
+    title: "17th Young Computer Scientist Competition — Gold Award (1st Place)",
+    issuer: "FITIS Software Chapter",
+    date: "2018",
+    image: "ycs-2018-gold.png",
+  },
+  {
+    title: "Sahasak Nimavum 2018 — Gold Medal (ICT)",
+    issuer: "Sri Lanka Inventors Commission",
+    date: "Oct 2018",
+    image: "sahasak-nimavum-2018-gold-ict.png",
+  },
+  {
+    title: "Sahasak Nimavum 2018 — Silver Medal (Energy)",
+    issuer: "Sri Lanka Inventors Commission",
+    date: "Oct 2018",
+    image: "sahasak-nimavum-2018-silver-energy.png",
+  },
+  {
+    title: "Sahasak Nimavum 2018 — Silver Medal (Environmental Conservation)",
+    issuer: "Sri Lanka Inventors Commission",
+    date: "Oct 2018",
+    image: "sahasak-nimavum-2018-silver-environmental.png",
+  },
+  {
+    title: "Sahasak Nimavum 2018 — Bronze Medal (Applied Science & Technology)",
+    issuer: "Sri Lanka Inventors Commission",
+    date: "Oct 2018",
+    image: "sahasak-nimavum-2018-bronze-applied-science.png",
+  },
+  {
+    title: "All Island School Inventors' Competition — Bronze Medal",
+    issuer: "Sri Lanka Association for the Advancement of Science (SLAAS)",
+    date: "Dec 2017",
+    image: "slaas-inventors-2017-bronze.png",
+  },
+  {
+    title: "Green Innovation 2017 — 2nd Place",
+    issuer: "Faculty of Science, University of Kelaniya",
+    date: "Oct 2017",
+    image: "green-innovation-2017-2nd-place.png",
+  },
+  {
+    title: "Green Innovation 2017 — Certificate of Participation",
+    issuer: "Faculty of Science, University of Kelaniya",
+    date: "Oct 2017",
+    image: "green-innovation-2017-participation.png",
+  },
+];
 
 export const references = [
   {

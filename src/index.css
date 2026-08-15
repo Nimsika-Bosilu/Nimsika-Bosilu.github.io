@@ -282,3 +282,73 @@ body {
   font-size: var(--fs-5);
   font-weight: var(--fw-600);
 }
+
+/* -------------------------------------------------- */
+/* MODAL (shared by Portfolio & Certificates pages)    */
+/* -------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 41, 71, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+  animation: fade-in 0.25s ease forwards;
+}
+
+.modal-box {
+  background: var(--navy);
+  border: 1px solid var(--border-color-strong);
+  border-radius: var(--radius-16);
+  max-width: 640px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 41, 71, 0.7);
+  color: var(--cream);
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 2;
+  transition: var(--transition-1);
+}
+
+.modal-close:hover {
+  background: var(--accent);
+}
+
+.modal-content {
+  padding: 24px;
+}
+
+.modal-title {
+  color: var(--text-primary);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  margin-bottom: 4px;
+}
+
+.modal-subtitle {
+  color: var(--accent-light);
+  font-size: var(--fs-6);
+  margin-bottom: 4px;
+}
+
+.modal-type {
+  color: var(--text-muted);
+  font-size: var(--fs-8);
+  margin-bottom: 16px;
+}

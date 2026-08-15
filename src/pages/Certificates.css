@@ -91,10 +91,23 @@
 }
 
 .certificate-card {
+  display: block;
+  width: 100%;
+  text-align: left;
   border-radius: var(--radius-12);
   overflow: hidden;
   background: var(--bg-surface-2);
   border: 1px solid var(--border-color);
+  transition: var(--transition-1);
+}
+
+.certificate-card:not(.placeholder) {
+  cursor: pointer;
+}
+
+.certificate-card:not(.placeholder):hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
 }
 
 .certificate-card.placeholder {
@@ -167,4 +180,17 @@
   .certificate-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.certificate-modal-box {
+  max-width: 760px;
+}
+
+.certificate-modal-img {
+  display: block;
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  background: var(--cream);
+  border-radius: var(--radius-16) var(--radius-16) 0 0;
 }
