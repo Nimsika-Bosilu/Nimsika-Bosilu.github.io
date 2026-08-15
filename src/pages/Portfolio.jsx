@@ -3,6 +3,37 @@ import { IoClose, IoLogoGithub, IoImageOutline } from "react-icons/io5";
 import { projects, projectCategories, categoryLabels } from "../data/profileData";
 import "./Portfolio.css";
 
+// Eagerly resolve every project image so entries in profileData.js can
+// reference them by filename alone.
+const projectImages = import.meta.glob("../assets/images/projects/*.{jpg,jpeg,png}", {
+  eager: true,
+  import: "default",
+});
+
+const resolveImage = (filename) => {
+  const match = Object.keys(projectImages).find((path) => path.endsWith(`/${filename}`));
+  return match ? projectImages[match] : null;
+};
+
+const ProjectThumb = ({ project, className = "" }) => {
+  const src = project.image ? resolveImage(project.image) : null;
+
+  if (src) {
+    return (
+      <figure className={`project-thumb ${className}`}>
+        <img src={src} alt={project.title} loading="lazy" />
+      </figure>
+    );
+  }
+
+  return (
+    <figure className={`project-thumb placeholder ${className}`}>
+      <IoImageOutline />
+      <span>Photo coming soon</span>
+    </figure>
+  );
+};
+
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
   const [selected, setSelected] = useState(null);
@@ -37,10 +68,7 @@ const Portfolio = () => {
                 className="project-card"
                 onClick={() => setSelected(project)}
               >
-                <figure className="project-thumb placeholder">
-                  <IoImageOutline />
-                  <span>Photo coming soon</span>
-                </figure>
+                <ProjectThumb project={project} />
 
                 <div className="project-card-body">
                   <p className="project-category">
@@ -62,10 +90,7 @@ const Portfolio = () => {
               <IoClose />
             </button>
 
-            <figure className="project-thumb placeholder modal-thumb">
-              <IoImageOutline />
-              <span>Photo coming soon</span>
-            </figure>
+            <ProjectThumb project={selected} className="modal-thumb" />
 
             <div className="modal-content">
               <p className="project-category">

@@ -124,6 +124,9 @@ export const categoryLabels = {
   robotics: "Robotics & Autonomous",
 };
 
+// `image` (optional) refers to a filename in src/assets/images/projects/,
+// resolved dynamically in Portfolio.jsx via import.meta.glob. Projects
+// without an `image` fall back to the "photo coming soon" placeholder.
 export const projects = [
   {
     id: "unigear",
@@ -244,6 +247,7 @@ export const projects = [
       "Maze navigation, obstacle avoidance, AR-tag decoding, target recognition, coordinate tracking, and shortest-path extraction.",
     stack: ["Embedded C", "Computer Vision", "Pathfinding"],
     link: "https://github.com/Nimsika-Bosilu",
+    image: "rescue-robot.jpg",
   },
   {
     id: "golf-caddie",
@@ -256,6 +260,7 @@ export const projects = [
       "ROS 2 simulation, SLAM/Nav2 navigation, ball detection, and voice interaction using Gazebo and MuJoCo.",
     stack: ["ROS 2", "SLAM", "Nav2", "Gazebo", "MuJoCo"],
     link: "https://github.com/Nimsika-Bosilu",
+    image: "golf-caddie.jpg",
   },
   {
     id: "micromouse",
