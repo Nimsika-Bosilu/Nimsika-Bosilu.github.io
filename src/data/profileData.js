@@ -286,6 +286,7 @@ export const projects = [
       "A team-based autonomous maze-solving robot developed for SLIIT ROBOFEST 2025.",
     stack: ["Embedded C", "Maze Solving", "Sensors"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["micromouse.jpg"],
   },
 ];
 
