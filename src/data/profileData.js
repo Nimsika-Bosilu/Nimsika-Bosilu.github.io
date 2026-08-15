@@ -124,9 +124,11 @@ export const categoryLabels = {
   robotics: "Robotics & Autonomous",
 };
 
-// `image` (optional) refers to a filename in src/assets/images/projects/,
+// `images` (optional array) lists filenames in src/assets/images/projects/,
 // resolved dynamically in Portfolio.jsx via import.meta.glob. Projects
-// without an `image` fall back to the "photo coming soon" placeholder.
+// without `images` fall back to the "photo coming soon" placeholder.
+// `imageType: "logo"` displays the image contained/padded on a light card
+// instead of cropped edge-to-edge (used for brand logos, not screenshots).
 export const projects = [
   {
     id: "unigear",
@@ -139,6 +141,8 @@ export const projects = [
       "A microservices marketplace that lets university students rent, sell, and swap engineering components and academic resources, replacing costly new purchases with reuse. Decoupled Java 17 / Spring Boot backend on a schema-per-service PostgreSQL pattern following SOLID principles and hexagonal architecture, with a React SPA offering a personalized dashboard, real-time WebSocket chat, and dynamic filtering.",
     stack: ["Java 17", "Spring Boot", "React", "PostgreSQL", "Microservices", "Docker", "AWS EC2", "WebSockets", "Gemini API"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["unigear-logo.png"],
+    imageType: "logo",
   },
   {
     id: "microbanking",
@@ -151,6 +155,8 @@ export const projects = [
       "A role-based banking platform covering customers, accounts, transactions, fixed deposits, reports, database constraints, and scheduled interest processing.",
     stack: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "JWT", "node-cron"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["microbanking-logo.png"],
+    imageType: "logo",
   },
   {
     id: "traffic-ecosystem",
@@ -175,6 +181,8 @@ export const projects = [
       "A safety platform using YOLO, OCR, automated SOS workflows, and location-based risk assessment to proactively flag risk for users.",
     stack: ["Flutter", "Node.js", "YOLO", "OCR"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["amica-logo.png"],
+    imageType: "logo",
   },
   {
     id: "nimma-quiz",
@@ -187,6 +195,7 @@ export const projects = [
       "A Kahoot-style live MCQ platform with QR joining, host controls, real-time leaderboards, and Firebase-backed sessions.",
     stack: ["React", "Firebase", "Real-Time"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["nimma-quiz.png"],
   },
   {
     id: "pattiya",
@@ -211,6 +220,8 @@ export const projects = [
       "ESP32 sensor nodes stream water-quality and growth-condition telemetry to a Node.js backend, surfaced through a Flutter dashboard with profile-based threshold alerting.",
     stack: ["ESP32", "Flutter", "Node.js", "Express.js", "Firebase", "MQTT", "REST API"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["algaguard-logo.png"],
+    imageType: "logo",
   },
   {
     id: "helaforge",
@@ -223,6 +234,7 @@ export const projects = [
       "A Kobuki robot integrated with LiDAR, Kinect RGB-D, SLAM, A* navigation, YOLO object localization, and voice commands over ROS 2 DDS on Linux.",
     stack: ["ROS 2", "Raspberry Pi", "Python", "LiDAR", "Kinect", "SLAM", "A*", "YOLO", "OpenCV"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["helaforge-1.png", "helaforge-2.png"],
   },
   {
     id: "dual-system-robot",
@@ -235,6 +247,7 @@ export const projects = [
       "A simulated-robot workflow and REST communication bridge transferring coordinates and commands between physical and virtual autonomous systems.",
     stack: ["ROS 2", "REST APIs", "Simulation"],
     link: "https://github.com/Nimsika-Bosilu",
+    images: ["dual-system-robot.jpg"],
   },
   {
     id: "rescue-robot",
@@ -247,7 +260,7 @@ export const projects = [
       "Maze navigation, obstacle avoidance, AR-tag decoding, target recognition, coordinate tracking, and shortest-path extraction.",
     stack: ["Embedded C", "Computer Vision", "Pathfinding"],
     link: "https://github.com/Nimsika-Bosilu",
-    image: "rescue-robot.jpg",
+    images: ["rescue-robot.jpg"],
   },
   {
     id: "golf-caddie",
@@ -260,7 +273,7 @@ export const projects = [
       "ROS 2 simulation, SLAM/Nav2 navigation, ball detection, and voice interaction using Gazebo and MuJoCo.",
     stack: ["ROS 2", "SLAM", "Nav2", "Gazebo", "MuJoCo"],
     link: "https://github.com/Nimsika-Bosilu",
-    image: "golf-caddie.jpg",
+    images: ["golf-caddie.jpg"],
   },
   {
     id: "micromouse",

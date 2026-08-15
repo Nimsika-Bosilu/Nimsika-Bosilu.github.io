@@ -16,11 +16,13 @@ const resolveImage = (filename) => {
 };
 
 const ProjectThumb = ({ project, className = "" }) => {
-  const src = project.image ? resolveImage(project.image) : null;
+  const filename = project.images?.[0];
+  const src = filename ? resolveImage(filename) : null;
+  const logoClass = project.imageType === "logo" ? "logo" : "";
 
   if (src) {
     return (
-      <figure className={`project-thumb ${className}`}>
+      <figure className={`project-thumb ${logoClass} ${className}`}>
         <img src={src} alt={project.title} loading="lazy" />
       </figure>
     );
@@ -31,6 +33,42 @@ const ProjectThumb = ({ project, className = "" }) => {
       <IoImageOutline />
       <span>Photo coming soon</span>
     </figure>
+  );
+};
+
+const ProjectGallery = ({ project }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = project.images ?? [];
+
+  if (images.length === 0) {
+    return <ProjectThumb project={project} className="modal-thumb" />;
+  }
+
+  const activeSrc = resolveImage(images[activeIndex]);
+  const logoClass = project.imageType === "logo" ? "logo" : "";
+
+  return (
+    <>
+      <figure className={`project-thumb modal-thumb ${logoClass}`}>
+        <img src={activeSrc} alt={`${project.title} ${activeIndex + 1}`} />
+      </figure>
+
+      {images.length > 1 && (
+        <ul className="gallery-thumbs">
+          {images.map((filename, index) => (
+            <li key={filename}>
+              <button
+                className={`gallery-thumb-btn ${index === activeIndex ? "active" : ""}`}
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Show image ${index + 1}`}
+              >
+                <img src={resolveImage(filename)} alt="" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
 
@@ -90,7 +128,7 @@ const Portfolio = () => {
               <IoClose />
             </button>
 
-            <ProjectThumb project={selected} className="modal-thumb" />
+            <ProjectGallery key={selected.id} project={selected} />
 
             <div className="modal-content">
               <p className="project-category">
