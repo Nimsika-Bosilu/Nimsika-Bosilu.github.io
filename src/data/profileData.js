@@ -140,7 +140,7 @@ export const projects = [
     description:
       "A microservices marketplace that lets university students rent, sell, and swap engineering components and academic resources, replacing costly new purchases with reuse. Decoupled Java 17 / Spring Boot backend on a schema-per-service PostgreSQL pattern following SOLID principles and hexagonal architecture, with a React SPA offering a personalized dashboard, real-time WebSocket chat, and dynamic filtering.",
     stack: ["Java 17", "Spring Boot", "React", "PostgreSQL", "Microservices", "Docker", "AWS EC2", "WebSockets", "Gemini API"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/UniGear-Project",
     images: ["unigear-logo.png"],
     imageType: "logo",
   },
@@ -154,7 +154,7 @@ export const projects = [
     description:
       "A role-based banking platform covering customers, accounts, transactions, fixed deposits, reports, database constraints, and scheduled interest processing.",
     stack: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "JWT", "node-cron"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/microbanking-system/DBMS_Microbanking_System",
     images: ["microbanking-logo.png"],
     imageType: "logo",
   },
@@ -168,7 +168,7 @@ export const projects = [
     description:
       "Socket-driven traffic dashboards with live map visualizations of vehicle and incident data, plus Keycloak-based role authentication across operator views.",
     stack: ["Next.js", "TypeScript", "Socket.IO", "Mapbox", "Keycloak", "Node.js"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Intelligent-Traffic-Ecosystem/its-dashboard-ui",
   },
   {
     id: "amica",
@@ -180,7 +180,7 @@ export const projects = [
     description:
       "A safety platform using YOLO, OCR, automated SOS workflows, and location-based risk assessment to proactively flag risk for users.",
     stack: ["Flutter", "Node.js", "YOLO", "OCR"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Kintsugi-Amica-AI",
     images: ["amica-logo.png"],
     imageType: "logo",
   },
@@ -194,7 +194,7 @@ export const projects = [
     description:
       "A Kahoot-style live MCQ platform with QR joining, host controls, real-time leaderboards, and Firebase-backed sessions.",
     stack: ["React", "Firebase", "Real-Time"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Nimsika-Bosilu/nimma-quiz",
     images: ["nimma-quiz.png"],
   },
   {
@@ -207,7 +207,7 @@ export const projects = [
     description:
       "An end-to-end cattle monitoring platform with real-time heat-cycle, heat-stress, geofence, and methane alerts over MQTT and time-series storage. Designed the multi-tenant backend and ESP32 edge-processing workflow.",
     stack: ["Node.js", "Express.js", "MongoDB", "InfluxDB", "MQTT", "ESP32", "FreeRTOS", "LoRa"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Team-Aquilon",
   },
   {
     id: "algaguard",
@@ -219,7 +219,7 @@ export const projects = [
     description:
       "ESP32 sensor nodes stream water-quality and growth-condition telemetry to a Node.js backend, surfaced through a Flutter dashboard with profile-based threshold alerting.",
     stack: ["ESP32", "Flutter", "Node.js", "Express.js", "Firebase", "MQTT", "REST API"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/AlgaGuard",
     images: ["algaguard-logo.png"],
     imageType: "logo",
   },
@@ -233,7 +233,7 @@ export const projects = [
     description:
       "A Kobuki robot integrated with LiDAR, Kinect RGB-D, SLAM, A* navigation, YOLO object localization, and voice commands over ROS 2 DDS on Linux.",
     stack: ["ROS 2", "Raspberry Pi", "Python", "LiDAR", "Kinect", "SLAM", "A*", "YOLO", "OpenCV"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/IntellisenseLab/final-project-helaforge",
     images: ["helaforge-1.png", "helaforge-2.png"],
   },
   {
@@ -246,7 +246,7 @@ export const projects = [
     description:
       "A simulated-robot workflow and REST communication bridge transferring coordinates and commands between physical and virtual autonomous systems.",
     stack: ["ROS 2", "REST APIs", "Simulation"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Team-Bumblebee-SLRC-2026",
     images: ["dual-system-robot.jpg"],
   },
   {
@@ -259,7 +259,7 @@ export const projects = [
     description:
       "Maze navigation, obstacle avoidance, AR-tag decoding, target recognition, coordinate tracking, and shortest-path extraction.",
     stack: ["Embedded C", "Computer Vision", "Pathfinding"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Roboroarz-Path-Finders",
     images: ["rescue-robot.jpg"],
   },
   {
@@ -272,7 +272,7 @@ export const projects = [
     description:
       "ROS 2 simulation, SLAM/Nav2 navigation, ball detection, and voice interaction using Gazebo and MuJoCo.",
     stack: ["ROS 2", "SLAM", "Nav2", "Gazebo", "MuJoCo"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Talos-Dynamics/bosilu-caddie-ros2-workspace",
     images: ["golf-caddie.jpg"],
   },
   {
@@ -285,7 +285,7 @@ export const projects = [
     description:
       "A team-based autonomous maze-solving robot developed for SLIIT ROBOFEST 2025.",
     stack: ["Embedded C", "Maze Solving", "Sensors"],
-    link: "https://github.com/Nimsika-Bosilu",
+    link: "https://github.com/Robofest25-Micromouse-PathFinder",
     images: ["micromouse.jpg"],
   },
 ];
